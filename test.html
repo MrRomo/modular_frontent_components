@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="modal fade show" id="editModal" tabindex="-1" role="dialog" style="display: block;" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="editHeader">
+                    <h5 class="modal-title" id="editLabel">Titulo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form action="/api/member/edit/5e00d6d0e8709d0017899bd3/0" method="post" id="editForm">
+                    <div class="modal-body">
+                        <div class="form-group" data-children-count="1">
+                            <input type="text" name="name" id="nameEditMember" class="form-control" placeholder="Nombre"
+                                required="" maxlength="20">
+                        </div>
+                        <div class="form-group" data-children-count="1">
+                            <input type="password" name="password" id="passwordEditMember" class="form-control"
+                                placeholder="Contraseña (opcional)" maxlength="20" data-kwimpalastatus="alive"
+                                data-kwimpalaid="1578972111045-3">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="callSecondary" data-dismiss="modal">Segunda
+                            accion</button>
+                        <button type="submit" class="btn btn-primary btn-delete" id="callConfirm"
+                            data-id="5e00f28ea6887b001727f7d2">Confirmacion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function setEditModal(attr) {
+        $('#editHeader').toggleClass(attr.color || "")
+        $('#editLabel').toggleClass(attr.textColor || " ")
+        $('#editLabel').text(attr.message || "TITULO")
+
+        $('#editConfirm').toggleClass(attr.confirmColor || " ")
+        $('#editConfirm').text(attr.confirmText || "Confirmacion")
+        $('#editConfirm').attr("data-id", attr.dataId)
+
+        $('#editSecondary').toggleClass(attr.secondaryColor || " ")
+        $('#editSecondary').text(attr.secondaryText || "Cerrar")
+        $('#editModalMessage').text(attr.message || "")
+        $('#editModal').modal('show')
+        $('#editForm').attr('action', attr.action || "#")
+
+    }
+    const atributes = {
+        message: "Desea eliminar",
+        title: "Eliminar",
+        color: "bg-warning",
+        textColor: "text-white",
+        confirmColor: 'bg-danger',
+        confirmText: "eliminar",
+        secondaryColor: "bg-danger",
+        dataId: "4543h03nf03n403fn",
+        action:'https://www.google.com'
+    }
+    setEditModal(atributes)
+</script>
+
+</html>

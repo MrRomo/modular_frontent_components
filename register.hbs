@@ -1,0 +1,41 @@
+<div class="col-md-3 p-4" style="margin-bottom: 4rem;">
+    <div class="card" style=" margin: auto; text-align: center;">
+        <div class="card-header">Registro de cuenta</div>
+        <div class="card-body">
+            <form action="/api/signup" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="firstname" placeholder="Nombre" value="" required=""
+                        data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-8">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lastname" placeholder="Apellido" value=""
+                        data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-9">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="" required=""
+                        data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-10">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" value="" required=""
+                        data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-11">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required=""
+                        data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-4">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+                        required="" data-kwimpalastatus="alive" data-kwimpalaid="1578968608446-5">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                </div>
+                <div class="form-group">
+                    <a href="/signin">
+                        <p>¿Ya tienes una cuenta?. <br>¡Inicia Sesion!</p>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="modal fade show" id="editModal" tabindex="-1" role="dialog" style="display: block;" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="editHeader">
+                <h5 class="modal-title" id="editLabel">Titulo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form action="/api/member/edit/5e00d6d0e8709d0017899bd3/0" method="post" id="editForm">
+                <div class="modal-body">
+                    <div class="form-group" data-children-count="1">
+                        <input type="text" name="name" id="nameEditMember" class="form-control" placeholder="Nombre"
+                            required="" maxlength="20">
+                    </div>
+                    <div class="form-group" data-children-count="1">
+                        <input type="password" name="password" id="passwordEditMember" class="form-control"
+                            placeholder="Contraseña (opcional)" maxlength="20" data-kwimpalastatus="alive"
+                            data-kwimpalaid="1578972111045-3">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="callSecondary" data-dismiss="modal">Segunda
+                        accion</button>
+                    <button type="submit" class="btn btn-primary btn-delete" id="callConfirm"
+                        data-id="5e00f28ea6887b001727f7d2">Confirmacion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function setEditModal(attr) {
+        $('#editHeader').toggleClass(attr.color || "")
+        $('#editLabel').toggleClass(attr.textColor || " ")
+        $('#editLabel').text(attr.message || "TITULO")
+
+        $('#editConfirm').toggleClass(attr.confirmColor || " ")
+        $('#editConfirm').text(attr.confirmText || "Confirmacion")
+        $('#editConfirm').attr("data-id", attr.dataId)
+
+        $('#editSecondary').toggleClass(attr.secondaryColor || " ")
+        $('#editSecondary').text(attr.secondaryText || "Cerrar")
+        $('#editModalMessage').text(attr.message || "")
+        $('#editModal').modal('show')
+        $('#editForm').attr('action', attr.action || "#")
+
+    }
+    const atributes = {
+        message: "Desea eliminar",
+        title: "Eliminar",
+        color: "bg-warning",
+        textColor: "text-white",
+        confirmColor: 'bg-danger',
+        confirmText: "eliminar",
+        secondaryColor: "bg-danger",
+        dataId: "4543h03nf03n403fn",
+        action: 'https://www.google.com'
+    }
+    setEditModal(atributes)
+</script>
